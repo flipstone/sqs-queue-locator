@@ -5,11 +5,19 @@ require "sqs-queue-locator/version"
 Gem::Specification.new do |s|
   s.name        = "sqs-queue-locator"
   s.version     = Sqs::Queue::Locator::VERSION
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.authors     = ["David Vollbracht"]
+  s.email       = ["david@flipstone.com"]
+  s.homepage    = "http://github.com/flipstone/sqs-queue/locator"
+  s.summary     = %q{Implements a naming conversion for SQS queues in multiple environments}
+  s.description = <<-end_desc
+Amazon SQS queue names need to be unique at the account level.
+This gem implements a simple naming convention of <environment>-<queue-name> to
+allow your app to have keep track of queues per environment.
+
+For the development environment, an extra prefix is added based on your machine's
+hostname so that multiple developers can work at the same time without stepping
+on each others' queues.
+  end_desc
 
   s.rubyforge_project = "sqs-queue-locator"
 
@@ -19,6 +27,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
+  s.add_development_dependency "rspec"
+  s.add_development_dependency "rake"
   # s.add_runtime_dependency "rest-client"
 end
