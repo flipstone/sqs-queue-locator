@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Sqs::Queue::Locator::VERSION
   s.authors     = ["David Vollbracht"]
   s.email       = ["david@flipstone.com"]
-  s.homepage    = "http://github.com/flipstone/sqs-queue/locator"
+  s.homepage    = "http://github.com/flipstone/sqs-queue-locator"
   s.summary     = %q{Implements a naming conversion for SQS queues in multiple environments}
   s.description = <<-end_desc
 Amazon SQS queue names need to be unique at the account level.
